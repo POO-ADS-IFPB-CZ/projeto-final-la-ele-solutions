@@ -38,4 +38,8 @@ public class Funcionario extends Pessoa{
                 dataContratacao, cargo, cargHoraria, salario, status
         );
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fdaff58cfa9dfa33f2486a8a83c01a0b72920c8f
