@@ -1,32 +1,38 @@
 package Model;
 
 import pessoas.Cliente;
-
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tratamento {
     private static int contadorId = 1;
-    private int id;
+    private final int id;
     private String tipo;
     private LocalDate dataInicial;
     private LocalDate dataFinal;
     private String status;
-    private StringBuilder observacao = new StringBuilder();
-    private List<Consulta> consultas;
-    private Cliente cliente;
+    private final StringBuilder observacao = new StringBuilder();
+    private final List<Consulta> consultas;
+    private final Cliente cliente;
 
     public Tratamento(String tipo, LocalDate dataInicial, String status, List<Consulta> consultas, Cliente cliente) {
+        this.id = contadorId++;
         this.tipo = tipo;
         this.dataInicial = dataInicial;
         this.status = status;
-        this.consultas = consultas;
+        this.consultas = new ArrayList<>(consultas);
         this.cliente = cliente;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTipo() {
         return tipo;
     }
+
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
@@ -52,29 +58,26 @@ public class Tratamento {
         this.status = status;
     }
 
-    public StringBuilder getObservacao() {
-        return observacao;
+    public String getObservacao() {
+        return observacao.toString();
     }
 
-    public void setObservacao(StringBuilder observacao) {
-        this.observacao = observacao;
+    public void adicionarObservacao(String novaObservacao) {
+        if (novaObservacao != null && !novaObservacao.isBlank()) {
+            observacao.append(novaObservacao).append("\n");
+        }
     }
 
     public List<Consulta> getConsultas() {
-        return consultas;
+        return new ArrayList<>(consultas);
     }
 
-    //TODO: aplicar regras aqui futuramente
-    public void setConsultas(List<Consulta> consultas) {
-        this.consultas = consultas;
+    public void setConsultas(List<Consulta> novasConsultas) {
+        this.consultas.clear();
+        this.consultas.addAll(novasConsultas);
     }
 
     public Cliente getCliente() {
         return cliente;
     }
-
-    public int getId() {
-        return id;
-    }
 }
-

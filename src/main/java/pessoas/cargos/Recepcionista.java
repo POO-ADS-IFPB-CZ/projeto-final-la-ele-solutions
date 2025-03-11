@@ -1,8 +1,9 @@
 package pessoas.cargos;
 
-import Model.Empresa;
+import Model.Consulta;
 import Model.Tratamento;
 import pessoas.Funcionario;
+import pessoas.Cliente;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -12,11 +13,24 @@ public class Recepcionista extends Funcionario {
         super(cpf, nome, genero, telefone, email, dataContratacao, "Recepcionista", cargHoraria, salario, status);
     }
 
-    public void adicionarTratamento(Empresa empresa, Tratamento tratamento) {
-        empresa.adicionarTratamento(tratamento);
+    public Consulta criarConsulta(String tipo, BigDecimal valor, LocalDate data, Cliente cliente, Funcionario funcionario) {
+        if (cliente == null || funcionario == null || valor == null || data == null || tipo == null || tipo.isEmpty()) {
+            throw new IllegalArgumentException("Dados inválidos para criar consulta.");
+        }
+        return new Consulta(tipo, valor, data, cliente, funcionario);
     }
 
-    public void removerTratamento(Empresa empresa, Tratamento tratamento) {
-        empresa.removerTratamento(tratamento);
+    public void modificarConsulta(Consulta consulta, String novoTipo, BigDecimal novoValor, LocalDate novaData) {
+        if (consulta == null) return;
+        if (novoTipo != null && !novoTipo.isEmpty()) consulta.setTipo(novoTipo);
+        if (novoValor != null) consulta.setValor(novoValor);
+        if (novaData != null) consulta.setData(novaData);
+    }
+
+    public void adicionarConsultaATratamento(Tratamento tratamento, Consulta consulta) {
+        if (tratamento == null || consulta == null) return;
+        if (!tratamento.getConsultas().contains(consulta)) {
+            tratamento.getConsultas().add(consulta);
+        }
     }
 }
