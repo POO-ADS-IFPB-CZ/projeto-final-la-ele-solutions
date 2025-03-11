@@ -3,7 +3,7 @@ package pessoas;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Funcionario extends Pessoa{
+public class Funcionario extends Pessoa {
     private LocalDate dataContratacao;
     private String cargo;
     private int cargHoraria;
@@ -16,6 +16,43 @@ public class Funcionario extends Pessoa{
         this.cargo = cargo;
         this.cargHoraria = cargHoraria;
         this.salario = salario;
+        this.status = status;
+    }
+
+    public LocalDate getDataContratacao() {
+        return dataContratacao;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+
+    public int getCargHoraria() {
+        return cargHoraria;
+    }
+
+    public void setCargHoraria(int cargHoraria) {
+        this.cargHoraria = cargHoraria;
+    }
+
+    public BigDecimal getSalario() {
+        return salario;
+    }
+
+    //TODO: fazer uma regra de negócios aq
+    public void setSalario(BigDecimal salario) {
+        this.salario = salario;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -38,8 +75,4 @@ public class Funcionario extends Pessoa{
                 dataContratacao, cargo, cargHoraria, salario, status
         );
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> fdaff58cfa9dfa33f2486a8a83c01a0b72920c8f
