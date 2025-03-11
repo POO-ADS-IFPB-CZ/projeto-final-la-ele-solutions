@@ -1,11 +1,14 @@
-package Model;
+package model.negocio;
 
-import pessoas.Cliente;
+import model.pessoa.Cliente;
+
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Tratamento {
+public class Tratamento implements Serializable {
+
     private static int contadorId = 1;
     private final int id;
     private String tipo;

@@ -1,10 +1,10 @@
-import Model.Empresa;
+import model.negocio.Empresa;
 import org.junit.Assert;
 import org.junit.Test;
-import pessoas.Funcionario;
-import pessoas.cargos.Administrador;
-import pessoas.cargos.Dentista;
-import pessoas.cargos.Recepcionista;
+import model.pessoa.Funcionario;
+import model.pessoa.cargo.Administrador;
+import model.pessoa.cargo.Dentista;
+import model.pessoa.cargo.Recepcionista;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
