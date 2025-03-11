@@ -1,7 +1,6 @@
 package pessoas;
 
 public abstract class Pessoa {
-    private int id;
     private String cpf;
     private String nome;
     private char genero;
@@ -16,9 +15,6 @@ public abstract class Pessoa {
         this.email = email;
     }
 
-    public int getId() {
-        return id;
-    }
 
     public String getCpf() {
         return cpf;
