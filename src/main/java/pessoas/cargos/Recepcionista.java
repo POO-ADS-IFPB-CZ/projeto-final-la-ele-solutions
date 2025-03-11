@@ -8,8 +8,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Recepcionista extends Funcionario {
-    public Recepcionista(String cpf, String nome, char genero, String telefone, String email, LocalDate dataContratacao, String cargo, int cargHoraria, BigDecimal salario, String status) {
-        super(cpf, nome, genero, telefone, email, dataContratacao, cargo, cargHoraria, salario, status);
+    public Recepcionista(String cpf, String nome, char genero, String telefone, String email, LocalDate dataContratacao, int cargHoraria, BigDecimal salario, String status) {
+        super(cpf, nome, genero, telefone, email, dataContratacao, "Recepcionista", cargHoraria, salario, status);
     }
 
     public Consulta marcaConsulta(Cliente cliente) {
