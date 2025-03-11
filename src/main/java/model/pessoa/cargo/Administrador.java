@@ -1,9 +1,9 @@
-package pessoas.cargos;
+package model.pessoa.cargo;
 
-import Model.Empresa;
-import Model.Tratamento;
-import pessoas.Cliente;
-import pessoas.Funcionario;
+import model.negocio.Empresa;
+import model.negocio.Tratamento;
+import model.pessoa.Cliente;
+import model.pessoa.Funcionario;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

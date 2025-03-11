@@ -1,7 +1,8 @@
-package Model;
+package model.negocio;
 
-import pessoas.Cliente;
-import pessoas.Funcionario;
+import model.pessoa.Cliente;
+import model.pessoa.Funcionario;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,4 +62,3 @@ public class Empresa {
         return CNPJ;
     }
 }
-

@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
-import pessoas.Cliente;
-import pessoas.Funcionario;
+import model.pessoa.Cliente;
+import model.pessoa.Funcionario;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

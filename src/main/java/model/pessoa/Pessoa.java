@@ -1,4 +1,4 @@
-package pessoas;
+package model.pessoa;
 
 public abstract class Pessoa {
     private static int contadorId = 1;

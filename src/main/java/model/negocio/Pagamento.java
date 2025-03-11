@@ -1,4 +1,4 @@
-package Model;
+package model.negocio;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
