@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Consulta {
+    private static int contadorId = 1;
+    private int id;
     private String tipo;
     private BigDecimal valor;
     private LocalDate data;
@@ -19,5 +21,9 @@ public class Consulta {
         this.data = data;
         this.cliente = cliente;
         this.funcionario = funcionario;
+    }
+
+    public int getId() {
+        return id;
     }
 }

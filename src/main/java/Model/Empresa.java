@@ -6,6 +6,8 @@ import pessoas.Funcionario;
 import java.util.List;
 
 public class Empresa {
+    private static int contadorId = 1;
+    private int id;
     private List<Funcionario> funcionarios;
     private List<Cliente> clientes;
     private List<Tratamento> tratamentos;
@@ -32,5 +34,21 @@ public class Empresa {
 
     public List<Tratamento> getTratamentos() {
         return tratamentos;
+    }
+
+    public void adicionarCliente(Cliente cliente) {
+        clientes.add(cliente);
+    }
+
+    public void removerCliente(Cliente cliente) {
+        clientes.remove(cliente);
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public int getId() {
+        return id;
     }
 }

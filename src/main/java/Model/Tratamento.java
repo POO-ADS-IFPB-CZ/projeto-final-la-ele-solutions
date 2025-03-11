@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Tratamento {
+    private static int contadorId = 1;
+    private int id;
     private String tipo;
     private LocalDate dataInicial;
     private LocalDate dataFinal;
@@ -69,5 +71,9 @@ public class Tratamento {
 
     public Cliente getCliente() {
         return cliente;
+    }
+
+    public int getId() {
+        return id;
     }
 }
