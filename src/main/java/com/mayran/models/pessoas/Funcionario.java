@@ -1,4 +1,4 @@
-package pessoas;
+package com.mayran.models.pessoas;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -9,14 +9,17 @@ public class Funcionario extends Pessoa {
     private int cargHoraria;
     private BigDecimal salario;
     private String status;
+    private String cargoFuncionario;
 
-    public Funcionario(String cpf, String nome, char genero, String telefone, String email, LocalDate dataContratacao, String cargo, int cargHoraria, BigDecimal salario, String status) {
+    public Funcionario(String cpf, String nome, char genero, String telefone, String email, LocalDate dataContratacao,
+                       String cargo, int cargHoraria, BigDecimal salario, String status, String cargoFuncionario) {
         super(cpf, nome, genero, telefone, email);
         this.dataContratacao = dataContratacao;
         this.cargo = cargo;
         this.cargHoraria = cargHoraria;
         this.salario = salario;
         this.status = status;
+        this.cargoFuncionario = cargoFuncionario;
     }
 
     public LocalDate getDataContratacao() {
@@ -54,6 +57,18 @@ public class Funcionario extends Pessoa {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public void setDataContratacao(LocalDate dataContratacao) {
+        this.dataContratacao = dataContratacao;
+    }
+
+    public String getCargoFuncionario() {
+        return cargoFuncionario;
+    }
+
+    public void setCargoFuncionario(String cargoFuncionario) {
+        this.cargoFuncionario = cargoFuncionario;
     }
 
     @Override

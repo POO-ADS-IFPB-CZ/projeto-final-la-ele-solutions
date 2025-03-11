@@ -1,4 +1,4 @@
-package pessoas;
+package com.mayran.models.pessoas;
 
 public abstract class Pessoa {
     private String cpf;

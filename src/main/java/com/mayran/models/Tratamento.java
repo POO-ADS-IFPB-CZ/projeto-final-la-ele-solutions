@@ -1,11 +1,12 @@
-package Model;
+package com.mayran.models;
 
-import pessoas.Cliente;
+import com.mayran.models.pessoas.Cliente;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public class Tratamento {
+    private int id;
     private String tipo;
     private LocalDate dataInicial;
     private LocalDate dataFinal;
@@ -13,8 +14,10 @@ public class Tratamento {
     private StringBuilder observacao = new StringBuilder();
     private List<Consulta> consultas;
     private Cliente cliente;
+    private static int contadorId = 1;
 
     public Tratamento(String tipo, LocalDate dataInicial, String status, List<Consulta> consultas, Cliente cliente) {
+        this.id = contadorId++;
         this.tipo = tipo;
         this.dataInicial = dataInicial;
         this.status = status;
@@ -69,5 +72,13 @@ public class Tratamento {
 
     public Cliente getCliente() {
         return cliente;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public static int getContadorId() {
+        return contadorId;
     }
 }

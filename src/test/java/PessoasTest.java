@@ -1,6 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-import pessoas.Funcionario;
+import com.mayran.models.pessoas.Funcionario;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
