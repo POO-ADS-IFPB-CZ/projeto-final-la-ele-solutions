@@ -1,5 +1,6 @@
 package pessoas.cargos;
 
+import Model.Empresa;
 import pessoas.Funcionario;
 
 import java.math.BigDecimal;
@@ -10,5 +11,11 @@ public class Administrador extends Funcionario {
         super(cpf, nome, genero, telefone, email, dataContratacao, "Administrador", cargHoraria, salario, status);
     }
 
-    //Poderá adicionar ou remover funcionários da empresa
+    public void adicionarFuncionario(Empresa empresa, Funcionario funcionario) {
+        empresa.adicionarFuncionario(funcionario);
+    }
+
+    public void removerFuncionario(Empresa empresa, Funcionario funcionario) {
+        empresa.removerFuncionario(funcionario);
+    }
 }

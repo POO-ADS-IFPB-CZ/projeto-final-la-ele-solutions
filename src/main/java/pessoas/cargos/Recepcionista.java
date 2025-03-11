@@ -1,7 +1,7 @@
 package pessoas.cargos;
 
-import Model.Consulta;
-import pessoas.Cliente;
+import Model.Empresa;
+import Model.Tratamento;
 import pessoas.Funcionario;
 
 import java.math.BigDecimal;
@@ -12,7 +12,11 @@ public class Recepcionista extends Funcionario {
         super(cpf, nome, genero, telefone, email, dataContratacao, "Recepcionista", cargHoraria, salario, status);
     }
 
-    public Consulta marcaConsulta(Cliente cliente) {
-        return null;
+    public void adicionarTratamento(Empresa empresa, Tratamento tratamento) {
+        empresa.adicionarTratamento(tratamento);
+    }
+
+    public void removerTratamento(Empresa empresa, Tratamento tratamento) {
+        empresa.removerTratamento(tratamento);
     }
 }
