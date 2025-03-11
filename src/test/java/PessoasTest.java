@@ -38,7 +38,7 @@ public class PessoasTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void DeveRetornarExceptionAoTentarInstanciarFuncionarioSemNome()
-            throws IllegalArgumentException {
+        throws IllegalArgumentException {
         Funcionario joaoSemNome = new Funcionario("12345678912", "", 'M', "8399998888", "joao@email.com", LocalDate.of(2025, 3, 11),
                 "Dentista", 44, BigDecimal.valueOf(2500.00),"Férias");
     }
