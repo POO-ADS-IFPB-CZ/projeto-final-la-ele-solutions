@@ -2,7 +2,7 @@ package Model;
 
 import pessoas.Cliente;
 import pessoas.Funcionario;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class Empresa {
@@ -11,6 +11,12 @@ public class Empresa {
     private List<Funcionario> funcionarios;
     private List<Cliente> clientes;
     private List<Tratamento> tratamentos;
+
+    public Empresa() {
+        this.funcionarios = new ArrayList<>();
+        this.clientes = new ArrayList<>();
+        this.tratamentos = new ArrayList<>();
+    }
 
     public void adicionarFuncionario(Funcionario funcionario) {
         funcionarios.add(funcionario);
@@ -52,3 +58,4 @@ public class Empresa {
         return id;
     }
 }
+
