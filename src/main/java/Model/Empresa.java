@@ -7,12 +7,15 @@ import java.util.List;
 
 public class Empresa {
     private static int contadorId = 1;
-    private int id;
+    private String CNPJ;
+    private String nome;
     private List<Funcionario> funcionarios;
     private List<Cliente> clientes;
     private List<Tratamento> tratamentos;
 
-    public Empresa() {
+    public Empresa(String CNPJ, String nome) {
+        this.CNPJ = CNPJ;
+        this.nome = nome;
         this.funcionarios = new ArrayList<>();
         this.clientes = new ArrayList<>();
         this.tratamentos = new ArrayList<>();
@@ -54,8 +57,8 @@ public class Empresa {
         return clientes;
     }
 
-    public int getId() {
-        return id;
+    public String getCNPJ() {
+        return CNPJ;
     }
 }
 

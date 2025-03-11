@@ -10,7 +10,6 @@ public class Dentista extends Funcionario {
     public Dentista(String cpf, String nome, char genero, String telefone, String email, LocalDate dataContratacao, int cargHoraria, BigDecimal salario, String status) {
         super(cpf, nome, genero, telefone, email, dataContratacao, "Dentista", cargHoraria, salario, status);
     }
-<<<<<<< HEAD
 
     public void adicionarTratamento(Empresa empresa, Tratamento tratamento) {
         if (empresa == null || tratamento == null) return;
@@ -30,6 +29,4 @@ public class Dentista extends Funcionario {
         if (empresa == null || tratamento == null) return;
         empresa.removerTratamento(tratamento);
     }
-=======
->>>>>>> ae237a1f3f1a6d4364e498ceaefec28fbf9063b6
 }
