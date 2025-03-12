@@ -22,9 +22,8 @@ public class TelaCadastroFuncionario extends JFrame {
         setTitle("Cadastro de Funcionário");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null); // Centraliza a tela
+        setLocationRelativeTo(null);
 
-        // Criando os campos de entrada para as informações do funcionário
         JLabel cpfLabel = new JLabel("CPF:");
         JTextField cpfField = new JTextField(20);
         JLabel nomeLabel = new JLabel("Nome:");
@@ -44,18 +43,15 @@ public class TelaCadastroFuncionario extends JFrame {
         JLabel statusLabel = new JLabel("Status:");
         JTextField statusField = new JTextField(20);
 
-        // Botão para salvar o funcionário
         JButton salvarButton = new JButton("Salvar Funcionário");
         salvarButton.addActionListener(e -> salvarFuncionario(cpfField.getText(), nomeField.getText(), generoField.getText().charAt(0), telefoneField.getText(), emailField.getText(), dataContratacaoField.getText(), Integer.parseInt(cargaHorariaField.getText()), Double.parseDouble(salarioField.getText()), statusField.getText()));
 
-        // Botão para ver os funcionários já cadastrados
         JButton verFuncionariosButton = new JButton("Ver Funcionários já Cadastrados");
         verFuncionariosButton.addActionListener(e -> abrirTelaFuncionariosCadastrados());
 
-        // Organizando a tela com um layout
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(12, 2, 10, 10)); // Organizando os campos
-        panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Espaçamento ao redor
+        panel.setLayout(new GridLayout(12, 2, 10, 10));
+        panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         panel.add(cpfLabel);
         panel.add(cpfField);
@@ -103,9 +99,8 @@ public class TelaCadastroFuncionario extends JFrame {
     }
 
     private void abrirTelaFuncionariosCadastrados() {
-        // Abrir a tela de ver funcionários cadastrados
         new TelaFuncionariosCadastrados().setVisible(true);
-        dispose(); // Fecha a tela de cadastro
+        dispose();
     }
 
     public static void main(String[] args) {
