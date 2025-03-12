@@ -2,12 +2,12 @@ package model.negocio;
 
 import model.pessoa.Cliente;
 import model.pessoa.Funcionario;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class Empresa {
-    private static int contadorId = 1;
+public class Empresa implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String CNPJ;
     private String nome;
     private List<Funcionario> funcionarios;

@@ -1,9 +1,11 @@
 package model.negocio;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Pagamento {
+public class Pagamento implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Tratamento tratamento;
     private BigDecimal valorTotal;
     private LocalDate dataPagamento;
@@ -17,6 +19,8 @@ public class Pagamento {
         this.dataPagamento = dataPagamento;
         this.valorTotal = calcularValorTotal(tratamento);
     }
+
+
 
     private BigDecimal calcularValorTotal(Tratamento tratamento) {
         BigDecimal total = BigDecimal.ZERO;
@@ -36,13 +40,5 @@ public class Pagamento {
 
     public LocalDate getDataPagamento() {
         return dataPagamento;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Pagamento do Tratamento ID: %d\n" +
-                        "Valor Total: R$ %.2f\n" +
-                        "Data de Pagamento: %s",
-                tratamento.getId(), valorTotal, dataPagamento);
     }
 }

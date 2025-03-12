@@ -1,34 +1,27 @@
 package model.negocio;
 
-import model.pessoa.Cliente;
 import model.pessoa.Funcionario;
+
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Consulta {
-    private static int contadorId = 1;
-    private final int id;
+public class Consulta implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String tipo;
     private BigDecimal valor;
     private LocalDate data;
-    private final Cliente cliente;
     private final Funcionario funcionario;
 
-    public Consulta(String tipo, BigDecimal valor, LocalDate data, Cliente cliente, Funcionario funcionario) {
-        if (tipo == null || valor == null || data == null || cliente == null || funcionario == null) {
+    public Consulta(String tipo, BigDecimal valor, LocalDate data, Funcionario funcionario) {
+        if (tipo == null || valor == null || data == null || funcionario == null) {
             throw new IllegalArgumentException("Nenhum campo pode ser nulo");
         }
 
-        this.id = contadorId++;
         this.tipo = tipo;
         this.valor = valor;
         this.data = data;
-        this.cliente = cliente;
         this.funcionario = funcionario;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getTipo() {
@@ -59,10 +52,6 @@ public class Consulta {
         if (data != null && !data.isBefore(LocalDate.now())) {
             this.data = data;
         }
-    }
-
-    public Cliente getCliente() {
-        return cliente;
     }
 
     public Funcionario getFuncionario() {

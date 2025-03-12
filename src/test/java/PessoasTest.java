@@ -1,7 +1,7 @@
+import model.pessoa.Cliente;
+import model.pessoa.cargo.Dentista;
 import org.junit.Assert;
 import org.junit.Test;
-import com.mayran.models.pessoas.Funcionario;
-import model.pessoa.Funcionario;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -21,9 +21,9 @@ public class PessoasTest {
                 "  Salário: R$ 2500,00\n" +
                 "  Status: Férias";
 
-        Funcionario funcionarioJoao = new Funcionario("12345678911","João",'M',
+        Dentista funcionarioJoao = new Dentista("12345678911","João",'M',
                 "8399998888", "joao@email.com", LocalDate.of(2025, 3, 11),
-                "Dentista", 44, BigDecimal.valueOf(2500.00),"Férias");
+                44, BigDecimal.valueOf(2500.00),"Férias");
 
         Assert.assertEquals(resultadoEsperado, funcionarioJoao.toString());
     }
@@ -39,8 +39,8 @@ public class PessoasTest {
     @Test(expected = IllegalArgumentException.class)
     public void DeveRetornarExceptionAoTentarInstanciarFuncionarioSemNome()
         throws IllegalArgumentException {
-        Funcionario joaoSemNome = new Funcionario("12345678912", "", 'M', "8399998888", "joao@email.com", LocalDate.of(2025, 3, 11),
-                "Dentista", 44, BigDecimal.valueOf(2500.00),"Férias");
+        Dentista joaoSemNome = new Dentista("12345678912", "", 'M', "8399998888", "joao@email.com", LocalDate.of(2025, 3, 11),
+                44, BigDecimal.valueOf(2500.00),"Férias");
     }
 
     @Test(expected = IllegalArgumentException.class)

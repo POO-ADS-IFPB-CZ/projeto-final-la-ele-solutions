@@ -1,1 +1,0 @@
-cd caminho/do/repositorio

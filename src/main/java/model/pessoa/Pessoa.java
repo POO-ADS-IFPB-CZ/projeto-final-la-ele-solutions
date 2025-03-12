@@ -1,6 +1,9 @@
 package model.pessoa;
 
-public abstract class Pessoa {
+import java.io.Serializable;
+
+public abstract class Pessoa implements Serializable{
+    private static final long serialVersionUID = 1L;
     private static int contadorId = 1;
     private final int id;
     private final String cpf;

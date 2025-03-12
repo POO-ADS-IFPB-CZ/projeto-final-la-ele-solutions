@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tratamento implements Serializable {
-
-    private static int contadorId = 1;
-    private final int id;
+    private static final long serialVersionUID = 1L;;
     private String tipo;
     private LocalDate dataInicial;
     private LocalDate dataFinal;
@@ -20,16 +18,11 @@ public class Tratamento implements Serializable {
     private final Cliente cliente;
 
     public Tratamento(String tipo, LocalDate dataInicial, String status, List<Consulta> consultas, Cliente cliente) {
-        this.id = contadorId++;
         this.tipo = tipo;
         this.dataInicial = dataInicial;
         this.status = status;
         this.consultas = new ArrayList<>(consultas);
         this.cliente = cliente;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getTipo() {

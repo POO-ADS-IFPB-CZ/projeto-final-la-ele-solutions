@@ -5,10 +5,12 @@ import model.negocio.Tratamento;
 import model.pessoa.Funcionario;
 import model.pessoa.Cliente;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Recepcionista extends Funcionario {
+public class Recepcionista extends Funcionario implements Serializable{
+    private static final long serialVersionUID = 1L;
     public Recepcionista(String cpf, String nome, char genero, String telefone, String email, LocalDate dataContratacao, int cargHoraria, BigDecimal salario, String status) {
         super(cpf, nome, genero, telefone, email, dataContratacao, "Recepcionista", cargHoraria, salario, status);
     }
@@ -17,7 +19,7 @@ public class Recepcionista extends Funcionario {
         if (cliente == null || funcionario == null || valor == null || data == null || tipo == null || tipo.isEmpty()) {
             throw new IllegalArgumentException("Dados inválidos para criar consulta.");
         }
-        return new Consulta(tipo, valor, data, cliente, funcionario);
+        return new Consulta(tipo, valor, data, funcionario);
     }
 
     public void modificarConsulta(Consulta consulta, String novoTipo, BigDecimal novoValor, LocalDate novaData) {

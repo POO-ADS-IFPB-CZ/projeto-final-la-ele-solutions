@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Funcionario extends Pessoa implements Serializable {
+public abstract class Funcionario extends Pessoa implements Serializable {
     private static final long serialVersionUID = 1L;
     private final LocalDate dataContratacao;
     private String cargo;

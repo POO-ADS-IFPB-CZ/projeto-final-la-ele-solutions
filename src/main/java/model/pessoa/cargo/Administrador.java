@@ -4,10 +4,13 @@ import model.negocio.Empresa;
 import model.negocio.Tratamento;
 import model.pessoa.Cliente;
 import model.pessoa.Funcionario;
+
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Administrador extends Funcionario {
+public class Administrador extends Funcionario implements Serializable {
+    private static final long serialVersionUID = 1L;
     public Administrador(String cpf, String nome, char genero, String telefone, String email, LocalDate dataContratacao, int cargHoraria, BigDecimal salario, String status) {
         super(cpf, nome, genero, telefone, email, dataContratacao, "Administrador", cargHoraria, salario, status);
     }
