@@ -4,12 +4,14 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Funcionario extends Pessoa {
+    private int id;
     private LocalDate dataContratacao;
     private String cargo;
     private int cargHoraria;
     private BigDecimal salario;
     private String status;
     private String cargoFuncionario;
+    private static int contadorId = 1;
 
     public Funcionario(String cpf, String nome, char genero, String telefone, String email, LocalDate dataContratacao,
                        String cargo, int cargHoraria, BigDecimal salario, String status, String cargoFuncionario) {
@@ -20,6 +22,7 @@ public class Funcionario extends Pessoa {
         this.salario = salario;
         this.status = status;
         this.cargoFuncionario = cargoFuncionario;
+        this.id = contadorId++;
     }
 
     public LocalDate getDataContratacao() {
@@ -69,6 +72,10 @@ public class Funcionario extends Pessoa {
 
     public void setCargoFuncionario(String cargoFuncionario) {
         this.cargoFuncionario = cargoFuncionario;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override
