@@ -15,11 +15,14 @@ public class EmpresaDAO {
     }
 
     public Empresa carregarEmpresa() {
+        Empresa empresa = null;
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
-            return (Empresa) in.readObject();
+            empresa = (Empresa) in.readObject();
+        } catch (EOFException e) {
+            System.out.println("Arquivo vazio ou corrompido, criando uma nova empresa.");
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-            return null;
         }
+        return empresa;
     }
 }

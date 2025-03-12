@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 public abstract class Pessoa implements Serializable{
     private static final long serialVersionUID = 1L;
-    private static int contadorId = 1;
-    private final int id;
     private final String cpf;
     private String nome;
     private char genero;
@@ -18,16 +16,11 @@ public abstract class Pessoa implements Serializable{
         if (!Character.toString(genero).matches("[MF]")) throw new IllegalArgumentException("Gênero deve ser 'M' ou 'F'");
         if (!email.contains("@")) throw new IllegalArgumentException("Email inválido");
 
-        this.id = contadorId++;
         this.cpf = cpf;
         this.nome = nome;
         this.genero = genero;
         this.telefone = telefone;
         this.email = email;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getCpf() {
