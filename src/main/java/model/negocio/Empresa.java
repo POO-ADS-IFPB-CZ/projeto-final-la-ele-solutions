@@ -34,6 +34,21 @@ public class Empresa implements Serializable {
         return funcionarios;
     }
 
+    public void adicionarFuncionarioPorNome(String nome, Funcionario funcionario) {
+        if (nome != null && funcionario != null && funcionario.getNome().equals(nome)) {
+            adicionarFuncionario(funcionario);
+        }
+    }
+
+    public Funcionario buscarFuncionarioPorNome(String nome) {
+        for (Funcionario funcionario : funcionarios) {
+            if (funcionario.getNome().equals(nome)) {
+                return funcionario;
+            }
+        }
+        return null;
+    }
+
     public void adicionarTratamento(Tratamento tratamento) {
         tratamentos.add(tratamento);
     }
