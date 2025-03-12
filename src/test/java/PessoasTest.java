@@ -1,6 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-import model.pessoa.Cliente;
+import com.mayran.models.pessoas.Funcionario;
 import model.pessoa.Funcionario;
 
 import java.math.BigDecimal;
