@@ -19,7 +19,7 @@ public class TelaCadastroCargo extends JFrame {
         setTitle("Escolha seu Cargo");
         setSize(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null); // Centraliza a tela
+        setLocationRelativeTo(null);
 
         JLabel cargoLabel = new JLabel("Escolha seu cargo:");
         cargoLabel.setFont(new Font("Arial", Font.BOLD, 16));
